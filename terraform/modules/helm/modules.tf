@@ -1,3 +1,0 @@
-module "digitalocean" {
-  source = "../digitalocean"
-}
