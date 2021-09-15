@@ -33,8 +33,6 @@ module "elastic" {
 
   do_project_id = module.kubernetes.do_project_id
   do_token = var.do_token
-
-  depends_on = [module.kubernetes.do_project_id]
 }
 
 module "istio" {
@@ -43,8 +41,6 @@ module "istio" {
 
   do_project_id = module.kubernetes.do_project_id
   do_token = var.do_token
-
-  depends_on = [module.kubernetes.do_project_id]
 }
 
 module "kubesphere" {
@@ -53,6 +49,4 @@ module "kubesphere" {
 
   do_project_id = module.kubernetes.do_project_id
   do_token = var.do_token
-
-  depends_on = [module.kubernetes.do_project_id]
 }
