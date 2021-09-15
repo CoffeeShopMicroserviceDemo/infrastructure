@@ -9,6 +9,11 @@ variable "do_project_name" {
   type = string
   default = "coffee-shop"
 }
+variable "do_k8s_name" {
+  description = "Digital Ocean kubernetes cluster name"
+  type = string
+  default = "do-k8s"
+}
 
 //--------------------------------------------------------------------
 // Modules
@@ -18,6 +23,7 @@ module "kubernetes" {
   version = "0.1.0-alpha.2"
 
   do_project_name = var.do_project_name
+  do_k8s_name = var.do_k8s_name
   do_token = var.do_token
 }
 
