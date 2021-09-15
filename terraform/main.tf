@@ -40,7 +40,7 @@ module "istio" {
     helm = helm.do_helm
   }
 
-  depends_on = [module.kubernetes.k8s_cluster_name]
+  depends_on = [module.kubernetes]
 }
 
 #module "kubesphere" {
