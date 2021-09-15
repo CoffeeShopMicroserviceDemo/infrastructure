@@ -20,7 +20,7 @@ variable "do_k8s_name" {
 
 module "kubernetes" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/kubernetes/digitalocean"
-  version = "0.1.0-alpha.2"
+  version = "0.1.0-alpha.3"
 
   do_project_name = var.do_project_name
   do_k8s_name = var.do_k8s_name
@@ -32,6 +32,7 @@ module "elastic" {
   version = "0.1.0-alpha.2"
 
   do_project_id = module.kubernetes.do_project_id
+  do_k8s_name = module.kubernetes.k8s_cluster_name
   do_token = var.do_token
 }
 
@@ -40,6 +41,7 @@ module "istio" {
   version = "0.1.0-alpha.4"
 
   do_project_id = module.kubernetes.do_project_id
+  do_k8s_name = module.kubernetes.k8s_cluster_name
   do_token = var.do_token
 }
 
@@ -48,5 +50,6 @@ module "kubesphere" {
   version = "0.1.0-alpha.3"
 
   do_project_id = module.kubernetes.do_project_id
+  do_k8s_name = module.kubernetes.k8s_cluster_name
   do_token = var.do_token
 }
