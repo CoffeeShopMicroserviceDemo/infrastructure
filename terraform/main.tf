@@ -20,7 +20,7 @@ variable "do_k8s_name" {
 
 module "kubernetes" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/kubernetes/digitalocean"
-  version = "0.1.0-alpha.3"
+  version = "> 0.1.0-alpha.0"
 
   do_project_name = var.do_project_name
   do_k8s_name = var.do_k8s_name
@@ -29,7 +29,7 @@ module "kubernetes" {
 
 module "elastic" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/elastic/helm"
-  version = "0.1.0-alpha.2"
+  version = "> 0.1.0-alpha.0"
 
   do_project_id = module.kubernetes.do_project_id
   do_k8s_name = module.kubernetes.k8s_cluster_name
@@ -38,7 +38,7 @@ module "elastic" {
 
 module "istio" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/istio/helm"
-  version = "0.1.0-alpha.4"
+  version = "> 0.1.0-alpha.0"
 
   do_project_id = module.kubernetes.do_project_id
   do_k8s_name = module.kubernetes.k8s_cluster_name
@@ -47,7 +47,7 @@ module "istio" {
 
 module "kubesphere" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/kubesphere/helm"
-  version = "0.1.0-alpha.3"
+  version = "> 0.1.0-alpha.0"
 
   do_project_id = module.kubernetes.do_project_id
   do_k8s_name = module.kubernetes.k8s_cluster_name
