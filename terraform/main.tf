@@ -1,6 +1,6 @@
 module "kubernetes" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/kubernetes/digitalocean"
-  version = "0.1.0-alpha.6"
+  version = "0.1.0-alpha.7"
 
   do_project_name = var.do_project_name
   do_k8s_name = var.do_k8s_name
