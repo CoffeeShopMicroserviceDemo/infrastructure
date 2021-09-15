@@ -37,7 +37,7 @@ module "elastic" {
 
 module "istio" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/istio/helm"
-  version = "0.1.0-alpha.1"
+  version = "0.1.0-alpha.2"
 
   do_project_id = module.kubernetes.do_project_id
   do_token = var.do_token
@@ -45,7 +45,7 @@ module "istio" {
 
 module "kubesphere" {
   source  = "app.terraform.io/coffeeshopmicroservicedemo/kubesphere/helm"
-  version = "0.1.0-alpha.1"
+  version = "0.1.0-alpha.2"
 
   do_project_id = module.kubernetes.do_project_id
   do_token = var.do_token
